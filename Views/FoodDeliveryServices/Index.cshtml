@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Lab5.Models.FoodDeliveryService>
+
+<h1>Food Delivery Services</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Fee</th>
+    </tr>
+    @foreach (var service in Model)
+    {
+        <tr>
+            <td>@service.Id</td>
+            <td>@service.Title</td>
+            <td>@service.Fee.ToString("C")</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Lab5.Models.Customer>
+
+<h1>Customers</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Birth Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.FullName</td>
+                <td>@customer.BirthDate.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
