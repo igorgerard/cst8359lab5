@@ -23,10 +23,10 @@ namespace Lab5.Models
         [Display(Name = "Birth Date")]
         public DateTime BirthDate { get; set; }
 
-        // calculated property (not mapped to DB by EF by default)
+        
         public string FullName => $"{LastName}, {FirstName}";
 
-        // navigation property: one customer can have many subscriptions
+        
         public ICollection<Subscription> Subscriptions { get; set; } = new List<Subscription>();
     }
 }

@@ -20,7 +20,7 @@ namespace Lab5.Models
         [Column(TypeName = "money")]
         public decimal Fee { get; set; }
 
-        // navigation property: one service can have many subscriptions
+
         public ICollection<Subscription> Subscriptions { get; set; } = new List<Subscription>();
     }
 }

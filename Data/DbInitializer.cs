@@ -8,16 +8,15 @@ namespace Lab5.Data
     {
         public static void Initialize(DealsFinderDbContext context)
         {
-            // Ensure database exists
             context.Database.EnsureCreated();
 
-            // If DB already has Customers, assume seeded
+            
             if (context.Customers.Any())
             {
-                return; // DB has been seeded
+                return; 
             }
 
-            // Seed Customers
+            
             var customers = new Customer[]
             {
                 new Customer { FirstName = "Carson", LastName = "Alexander", BirthDate = DateTime.Parse("1995-01-09") },
@@ -32,7 +31,6 @@ namespace Lab5.Data
             }
             context.SaveChanges();
 
-            // Seed FoodDeliveryServices
             var foodDeliveryServices = new FoodDeliveryService[]
             {
                 new FoodDeliveryService { Id = "A1", Title = "Alpha", Fee = 300 },
@@ -46,7 +44,7 @@ namespace Lab5.Data
             }
             context.SaveChanges();
 
-            // Seed Subscriptions
+            
             var subscriptions = new Subscription[]
             {
                 new Subscription { CustomerId = 1, ServiceId = "A1" },
